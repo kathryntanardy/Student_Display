@@ -20,4 +20,4 @@ This is the form where the user can add new Students information.
 
 ```python
 This is where all of the Students in the database are displayed as a table form. 
-```python
+```
