@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Display</title>
+    <link rel="stylesheet" href="/stylesheet/styling.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="font-size: 20px">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../../../../../../add.html">Add Student</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/students/display">Table</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    <main class="container-fluid">
+        <div class="row justify-content-center"> 
+        </div>
+        <div class="row">
+            <div class="col-sm-auto" th:each="students:${std}" style="width:300px; height:300px;">
+                <div class="card border-dark position-relative card my-3 text-center bg-light">
+                    <h5 style="background-color: rgb(221, 242, 249); height: auto; padding-top: 5px; padding-bottom: 5px;" class ="card-title align-middle" th:text="${students.name}"></h5>
+                    <img class="profile" src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" width="100" height="100">
+                    <h6 class="card-subtitle py-2" th:text="${students.major}"></h6>
+                    <p th:text="${'Height : ' + students.height}"></p>
+                    <p th:text="${'Weight: ' + students.weight}"></p>
+                    <p th:text="${'GPA: ' + students.gpa}"></p>
+                    <div class="card-footer text-center">
+                        <a style="float: left; background-color: rgb(221, 242, 249);" class="btn" th:href="@{/students/edit/{id}(id=${students.stid})}">Edit</a>
+                        <a style="float: right; background-color: rgb(221, 242, 249);" class="btn" th:href="@{/students/{id}(id=${students.stid})}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
