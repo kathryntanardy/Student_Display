@@ -47,8 +47,9 @@ public class StudentsController {
         double newHeight = Double.parseDouble(newStudent.get("height"));
         double newGpa = Double.parseDouble(newStudent.get("gpa"));
         String newMajor = newStudent.get("major");
+        String newHair = newStudent.get("hairColor");
         studentRepo.save(new Student(newName, newWeight, newHeight, newGpa,
-                newMajor));
+                newMajor, newHair));
         response.setStatus(201);
         return "redirect:/students/view";
     }
@@ -67,6 +68,7 @@ public class StudentsController {
         theStudent.setHeight(Double.parseDouble(student.get("height")));
         theStudent.setGpa(Double.parseDouble(student.get("gpa")));
         theStudent.setMajor(student.get("major"));
+        theStudent.setHairColor(student.get("hairColor"));
 
         studentRepo.save(theStudent);
         return "redirect:/students/view";

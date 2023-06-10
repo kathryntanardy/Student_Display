@@ -13,16 +13,18 @@ public class Student {
     private double height;
     private double gpa;
     private String major;
+    public String hairColor;
 
     public Student() {
     }
 
-    public Student(String name, double weight, double height, double gpa, String major) {
+    public Student(String name, double weight, double height, double gpa, String major, String hairColor) {
         this.name = name;
         this.weight = weight;
         this.height = height;
         this.gpa = gpa;
         this.major = major;
+        this.hairColor = hairColor;
     }
 
     public String getName() {
@@ -71,6 +73,14 @@ public class Student {
 
     public void setStid(int stid) {
         this.stid = stid;
+    }
+
+    public String getHairColor() {
+        return hairColor;
+    }
+
+    public void setHairColor(String hairColor) {
+        this.hairColor = hairColor;
     }
 
 }
