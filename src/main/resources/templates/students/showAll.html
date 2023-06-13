@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-sm-auto" th:each="students:${std}" style="width:300px; height:300px;">
                 <div class="card border-dark position-relative card my-3 text-center bg-light">
-                    <div th:style="'background-color:'+${students.hairColor} "><h5 style="height: auto; margin-top: 10px; margin-bottom: 10px;" class ="card-title align-middle"  th:text="${students.name}"></h5></div>
+                    <div th:style="'background-color:'+${students.hairColor} "><h5 style="height: auto; margin-top: 10px; margin-bottom: 10px; color: white;" class ="card-title align-middle"  th:text="${students.name}"></h5></div>
                     
                     <img class="profile" src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" width="100" height="100">
                     <h6 class="card-subtitle py-2" th:text="${students.major}"></h6>
