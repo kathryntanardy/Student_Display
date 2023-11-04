@@ -1,4 +1,4 @@
-# Assignment 2: Student Display Website
+#Student Display Website
 
 Included below is some description of the features I have included in this assignment
 
